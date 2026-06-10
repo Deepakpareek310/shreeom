@@ -1,167 +1,279 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shree Om Agencies - Digital Card</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-    .card {
-      width: 60%;
-      max-width: 400px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 30px;
-      text-align: center;
-    }
-    .circle {
-      background: #c82333;
-      color: white;
-      width: 64px;
-      height: 64px;
-      line-height: 64px;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    h1 {
-      color: #c82333;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-    .subtitle {
-      color: #666;
-      font-size: 10px;
-      margin-bottom: 20px;
-    }
-    .brands {
-      background: white;
-      border-radius: 10px;
-      padding: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 25px;
-    }
-    .brands-title {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 15px;
-      font-weight: normal;
-    }
-    .brand {
-      background: #c82333;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: 11px;
-    }
-    .contact-section {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-    .contact-title {
-      color: #333;
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      text-align: left;
-    }
-    .contact-item {
-      background: #e7f7e6;
-      color: #146c43;
-      border: 1px solid #b7dfb5;
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .tap-to-call {
-      color: #28a745;
-      font-size: 12px;
-      font-weight: bold;
-    }
-    .address {
-      background: #f5f5f5;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 10px;
-      margin-bottom: 20px;
-    }
-    .button {
-      display: block;
-      background: #c82333;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 13px;
-      margin: 10px auto;
-      width: 100%;
-      text-decoration: none;
-    }
-    .footer {
-      margin-top: 20px;
-      font-size: 10px;
-      color: #999;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shree Om Agencies</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+font-family:'Inter',sans-serif;
+background:#f5f7fb;
+}
+
+.glass{
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,.9);
+}
+
+.card{
+background:white;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.brand-card{
+transition:.3s;
+}
+
+.brand-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.btn-primary{
+background:#e11d2f;
+color:white;
+transition:.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+}
+
+.btn-outline{
+border:2px solid #f0f0f0;
+transition:.3s;
+}
+
+.btn-outline:hover{
+background:#fafafa;
+}
+</style>
 </head>
-<body>
-  <div class="card">
-    <div class="circle">OM</div>
-    <h1>SHREE OM AGENCIES</h1>
-    <div class="subtitle">Authorized Distributors of Premium Brands</div>
 
-```
-<div class="brands-title">Authorized Distributors</div>
-<div class="brands">
-  <div class="brand">DOLLAR</div>
-  <div class="brand">ESSA</div>
-  <div class="brand">PRITHVI</div>
-  <div class="brand">POOMER</div>
-  <div class="brand">DAZZLE</div>
-  <div class="brand">BARUN SOCKS</div>
+<body class="p-4">
+
+<div class="max-w-5xl mx-auto">
+
+<!-- Main Card -->
+<div class="card overflow-hidden">
+
+<!-- Hero -->
+<div class="relative bg-gradient-to-br from-red-50 via-white to-pink-50 py-14 px-6 text-center">
+
+<div class="w-32 h-32 mx-auto rounded-full bg-red-600 flex items-center justify-center text-white text-5xl font-bold shadow-xl border-8 border-white">
+OM
 </div>
 
-<div class="contact-title">Contact Information</div>
-<div class="contact-section">
-  <div class="contact-item">
-    <span>📞 +91 94482 74079</span>
-    <span class="tap-to-call">TAP TO CALL</span>
-  </div>
-  <div class="contact-item">
-    <span>📞 +91 94499 26891</span>
-    <span class="tap-to-call">TAP TO CALL</span>
-  </div>
+<h1 class="text-5xl font-extrabold mt-6">
+<span class="text-red-600">Shree Om</span>
+<span class="text-slate-800">Agencies</span>
+</h1>
+
+<p class="text-xl text-gray-500 mt-3">
+Premium Apparel Distribution Partner
+</p>
+
+<div class="inline-flex items-center gap-3 mt-8 px-6 py-4 bg-white rounded-full shadow-lg">
+<span class="text-red-500">🛡️</span>
+<span class="font-medium">
+Authorized Distributors of Premium Brands
+</span>
 </div>
 
-<div class="address">
-  📍 Opp Sapthagiri PU College, 1st Cross, <br/>
-  Sapthagiri Extension <br/>
-  Tumkur – 572 102
 </div>
 
-<a class="button" href="contact.vcf" download>💾 Save to Contacts</a>
-<a class="button" href="https://maps.app.goo.gl/AUxxwTjBxEb3Xejn8?g_st=ipc" target="_blank">📍 View Location</a>
+<!-- Brands -->
+<section class="px-8 py-12">
 
-<div class="footer">Digital Business Card • Always Updated</div>
-```
+<h2 class="text-4xl font-bold text-center mb-10">
+Our Trusted Brands
+</h2>
 
-  </div>
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="brand-card bg-white shadow-lg rounded-2xl p-8 text-center">
+<h3 class="text-red-600 font-bold text-3xl">DOLLAR</h3>
+<p class="text-gray-500 mt-2">Wear The Change</p>
+</div>
+
+<div class="brand-card bg-white shadow-lg rounded-2xl p-8 text-center">
+<h3 class="text-blue-900 font-bold text-3xl">ESSA</h3>
+<p class="text-gray-500 mt-2">Inner Wear</p>
+</div>
+
+<div class="brand-card bg-white shadow-lg rounded-2xl p-8 text-center">
+<h3 class="text-red-600 font-bold text-3xl">PRITHVI</h3>
+<p class="text-gray-500 mt-2">Inner Wear</p>
+</div>
+
+<div class="brand-card bg-white shadow-lg rounded-2xl p-8 text-center">
+<h3 class="text-red-600 font-bold text-3xl">POOMER</h3>
+<p class="text-gray-500 mt-2">Clothing Company</p>
+</div>
+
+<div class="brand-card bg-white shadow-lg rounded-2xl p-8 text-center">
+<h3 class="text-blue-900 font-bold text-3xl">DAZZLE</h3>
+<p class="text-gray-500 mt-2">Inner Wear</p>
+</div>
+
+<div class="brand-card bg-white shadow-lg rounded-2xl p-8 text-center">
+<h3 class="text-red-700 font-bold text-3xl">BARUN</h3>
+<p class="text-gray-500 mt-2">Socks</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Stats -->
+<section class="px-8">
+
+<div class="bg-white rounded-3xl shadow-lg p-8">
+
+<div class="grid md:grid-cols-3 text-center gap-8">
+
+<div>
+<div class="text-5xl font-bold text-red-600">500+</div>
+<div class="text-gray-600 mt-2">Retailers Served</div>
+</div>
+
+<div>
+<div class="text-5xl font-bold text-red-600">6</div>
+<div class="text-gray-600 mt-2">Authorized Brands</div>
+</div>
+
+<div>
+<div class="text-5xl font-bold text-red-600">15+</div>
+<div class="text-gray-600 mt-2">Years Experience</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+<section class="px-8 py-12">
+
+<h2 class="text-4xl font-bold text-center mb-10">
+Contact Us
+</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-green-50 border border-green-200 rounded-3xl p-6">
+
+<div class="flex items-center gap-4">
+
+<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl">
+📞
+</div>
+
+<div>
+<p class="text-gray-500">Sales Executive 1</p>
+<p class="font-bold text-3xl">
++91 94482 74079
+</p>
+</div>
+
+</div>
+
+<a href="tel:+919448274079"
+class="inline-block mt-5 bg-green-500 text-white px-6 py-3 rounded-full">
+Tap to Call
+</a>
+
+</div>
+
+<div class="bg-green-50 border border-green-200 rounded-3xl p-6">
+
+<div class="flex items-center gap-4">
+
+<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl">
+📞
+</div>
+
+<div>
+<p class="text-gray-500">Sales Executive 2</p>
+<p class="font-bold text-3xl">
++91 94499 26891
+</p>
+</div>
+
+</div>
+
+<a href="tel:+919449926891"
+class="inline-block mt-5 bg-green-500 text-white px-6 py-3 rounded-full">
+Tap to Call
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Location -->
+<section class="px-8">
+
+<div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row justify-between items-center gap-8">
+
+<div>
+<h3 class="text-2xl font-bold">
+📍 Opp Sapthagiri PU College
+</h3>
+
+<p class="mt-4 text-lg text-gray-600">
+1st Cross, Sapthagiri Extension<br>
+Tumkur – 572102, Karnataka
+</p>
+</div>
+
+<button class="btn-outline px-8 py-4 rounded-full text-lg">
+Open in Maps
+</button>
+
+</div>
+
+</section>
+
+<!-- Actions -->
+<section class="px-8 py-12">
+
+<div class="grid md:grid-cols-3 gap-5">
+
+<button class="btn-primary py-5 rounded-2xl font-semibold text-xl">
+💾 Save Contact
+</button>
+
+<button class="btn-outline py-5 rounded-2xl font-semibold text-xl">
+🔗 Share Card
+</button>
+
+<button class="btn-outline py-5 rounded-2xl font-semibold text-xl">
+🌐 Visit Website
+</button>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+<div class="text-center pb-10 text-gray-500 text-lg">
+❤️ Thank you for your trust and support
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
