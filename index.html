@@ -16,44 +16,78 @@ font-family:'Inter',sans-serif;
 background:#f5f7fb;
 }
 
-.card{
-background:white;
-border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-overflow:hidden;
-}
-
 .brand-card{
-transition:.3s;
+transition:all .3s ease;
 }
 
 .brand-card:hover{
 transform:translateY(-4px);
 }
 
-.btn-primary{
-background:#dc2626;
-color:white;
+.glow{
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:-1;
 }
 
-.btn-outline{
-border:1px solid #e5e7eb;
-background:white;
+.glow::before{
+content:"";
+position:absolute;
+top:-100px;
+left:-100px;
+width:300px;
+height:300px;
+background:#fecaca;
+border-radius:50%;
+filter:blur(80px);
+opacity:.4;
+}
+
+.glow::after{
+content:"";
+position:absolute;
+bottom:-100px;
+right:-100px;
+width:300px;
+height:300px;
+background:#fca5a5;
+border-radius:50%;
+filter:blur(80px);
+opacity:.4;
 }
 </style>
+
 </head>
+<body>
 
-<body class="p-3">
+<div class="glow"></div>
 
-<div class="max-w-md mx-auto">
+<div class="max-w-lg mx-auto p-3">
 
-<div class="card">
+<div class="bg-white rounded-3xl shadow-xl overflow-hidden">
 
 <!-- HERO -->
-<div class="bg-gradient-to-br from-red-50 via-white to-red-100 text-center py-8 px-5">
 
-<div class="w-20 h-20 mx-auto rounded-full bg-red-600 flex items-center justify-center text-white text-3xl font-bold shadow-lg border-4 border-white">
-OM
+<div class="relative bg-gradient-to-br from-red-50 via-white to-red-100 py-8 px-5 text-center overflow-hidden">
+
+<div class="absolute inset-0 opacity-10">
+<svg viewBox="0 0 1200 300" class="w-full h-full">
+<path fill="#dc2626"
+d="M0,160 C300,40 600,260 1200,120 L1200,0 L0,0 Z">
+</path>
+</svg>
+</div>
+
+<div class="relative z-10">
+
+<div class="flex justify-center">
+
+<img
+src="PRITHVI.png"
+alt="Logo"
+class="w-24 object-contain drop-shadow-lg">
+
 </div>
 
 <h1 class="mt-4 text-3xl font-extrabold">
@@ -65,46 +99,49 @@ OM
 Premium Apparel Distribution Partner
 </p>
 
-<div class="mt-5 bg-white rounded-full px-4 py-3 inline-flex items-center shadow">
+<div class="inline-flex items-center gap-2 mt-5 bg-white rounded-full px-4 py-3 shadow">
 🛡️
-<span class="ml-2 text-sm font-medium">
+<span class="font-medium text-sm">
 Authorized Distributors
 </span>
 </div>
 
 </div>
 
+</div>
+
 <!-- BRANDS -->
+
 <div class="p-5">
 
-<h2 class="text-xl font-bold text-center mb-4">
+<h2 class="text-xl font-bold text-center mb-5">
 Our Trusted Brands
 </h2>
 
 <div class="grid grid-cols-2 gap-3">
 
-<div class="brand-card bg-white shadow rounded-xl p-4 text-center">
-<div class="font-bold text-red-600">DOLLAR</div>
+<div class="brand-card bg-white border border-gray-100 shadow-md rounded-2xl p-4 flex items-center justify-center">
+<img src="DOLLAR.PNG" class="h-12 object-contain">
 </div>
 
-<div class="brand-card bg-white shadow rounded-xl p-4 text-center">
-<div class="font-bold text-blue-900">ESSA</div>
+<div class="brand-card bg-white border border-gray-100 shadow-md rounded-2xl p-4 flex items-center justify-center">
+<img src="ESSA.PNG" class="h-12 object-contain">
 </div>
 
-<div class="brand-card bg-white shadow rounded-xl p-4 text-center">
-<div class="font-bold text-red-600">PRITHVI</div>
+<div class="brand-card bg-white border border-gray-100 shadow-md rounded-2xl p-4 flex items-center justify-center">
+<img src="PRITHVI.png" class="h-12 object-contain">
 </div>
 
-<div class="brand-card bg-white shadow rounded-xl p-4 text-center">
-<div class="font-bold text-red-600">POOMER</div>
+<div class="brand-card bg-white border border-gray-100 shadow-md rounded-2xl p-4 flex items-center justify-center">
+<img src="POOMER.PNG" class="h-12 object-contain">
 </div>
 
-<div class="brand-card bg-white shadow rounded-xl p-4 text-center">
-<div class="font-bold text-blue-900">DAZZLE</div>
+<div class="brand-card bg-white border border-gray-100 shadow-md rounded-2xl p-4 flex items-center justify-center">
+<img src="DAZZLE.PNG" class="h-12 object-contain">
 </div>
 
-<div class="brand-card bg-white shadow rounded-xl p-4 text-center">
-<div class="font-bold text-red-600">BARUN SOCKS</div>
+<div class="brand-card bg-white border border-gray-100 shadow-md rounded-2xl p-4 flex items-center justify-center">
+<img src="BARUN.PNG" class="h-12 object-contain">
 </div>
 
 </div>
@@ -112,14 +149,15 @@ Our Trusted Brands
 </div>
 
 <!-- STATS -->
+
 <div class="px-5">
 
 <div class="bg-gray-50 rounded-2xl p-5">
 
-<div class="grid grid-cols-3 text-center gap-3">
+<div class="grid grid-cols-3 text-center">
 
 <div>
-<div class="text-red-600 text-2xl font-bold">
+<div class="text-2xl font-bold text-red-600">
 1994
 </div>
 <div class="text-xs text-gray-500">
@@ -128,20 +166,20 @@ Trusted Since
 </div>
 
 <div>
-<div class="text-red-600 text-2xl font-bold">
+<div class="text-2xl font-bold text-red-600">
 8+
 </div>
 <div class="text-xs text-gray-500">
-Brands
+Authorized Brands
 </div>
 </div>
 
 <div>
-<div class="text-red-600 text-2xl font-bold">
+<div class="text-2xl font-bold text-red-600">
 30+
 </div>
 <div class="text-xs text-gray-500">
-Years
+Years Experience
 </div>
 </div>
 
@@ -152,6 +190,7 @@ Years
 </div>
 
 <!-- CONTACT -->
+
 <div class="p-5">
 
 <h2 class="text-xl font-bold text-center mb-4">
@@ -162,11 +201,11 @@ Contact Us
 
 <div class="bg-green-50 border border-green-200 rounded-2xl p-4">
 
-<div class="text-sm text-gray-500">
+<div class="text-gray-500 text-sm">
 Mahaveer Pareek
 </div>
 
-<div class="font-bold text-xl mt-1">
+<div class="text-xl font-bold mt-1">
 +91 94482 74079
 </div>
 
@@ -179,11 +218,11 @@ class="inline-block mt-3 bg-green-500 text-white px-5 py-2 rounded-full">
 
 <div class="bg-green-50 border border-green-200 rounded-2xl p-4">
 
-<div class="text-sm text-gray-500">
+<div class="text-gray-500 text-sm">
 Office
 </div>
 
-<div class="font-bold text-xl mt-1">
+<div class="text-xl font-bold mt-1">
 +91 94499 26891
 </div>
 
@@ -199,40 +238,45 @@ class="inline-block mt-3 bg-green-500 text-white px-5 py-2 rounded-full">
 </div>
 
 <!-- ADDRESS -->
+
 <div class="px-5">
 
 <div class="bg-gray-50 rounded-2xl p-5">
 
-<div class="font-semibold text-lg">
+<h3 class="font-bold text-lg">
 📍 Shree Om Agencies
-</div>
+</h3>
 
-<p class="mt-2 text-gray-600 text-sm leading-relaxed">
+<p class="text-gray-600 mt-3 text-sm leading-relaxed">
 Opp Sapthagiri PU College<br>
 1st Cross, Sapthagiri Extension<br>
-Tumkur - 572102
+Tumkur – 572102
 </p>
 
 </div>
 
 </div>
 
-<!-- ACTIONS -->
+<!-- ACTION BUTTONS -->
+
 <div class="p-5 space-y-3">
 
-<a href="contact.vcf"
-class="block text-center btn-primary py-4 rounded-xl font-semibold">
+<a
+href="contact.vcf"
+class="block text-center bg-red-600 text-white py-4 rounded-xl font-semibold shadow-lg">
 💾 Save Contact
 </a>
 
-<a href="https://maps.google.com"
-class="block text-center btn-outline py-4 rounded-xl font-semibold">
+<a
+href="https://maps.google.com"
+target="_blank"
+class="block text-center bg-white border border-gray-200 py-4 rounded-xl font-semibold">
 📍 View Location
 </a>
 
 </div>
 
-<div class="text-center text-gray-400 text-sm pb-6">
+<div class="pb-6 text-center text-sm text-gray-400">
 Digital Business Card • Always Updated
 </div>
 
