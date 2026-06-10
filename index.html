@@ -3,52 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Shree Om Agencies</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
 body{
-font-family:'Inter',sans-serif;
-background:#f8fafc;
+    font-family:'Inter',sans-serif;
+    background:
+    linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #ffffff 50%,
+    #f8fafc 100%);
 }
-
 .card{
-background:white;
-border-radius:32px;
-box-shadow:0 20px 50px rgba(0,0,0,.08);
-overflow:hidden;
+    background:white;
+    border-radius:32px;
+    border:1px solid rgba(15,23,42,.05);
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.03),
+        0 20px 40px rgba(15,23,42,.06);
+    overflow:hidden;
 }
-
-.brand{
-transition:.3s;
-}
-
-.brand:hover{
-transform:translateY(-3px);
-}
-
 .hero-bg{
-background:
-linear-gradient(135deg,#fff5f5 0%,#ffffff 40%,#fff1f2 100%);
+    background:
+    linear-gradient(
+    135deg,
+    #fff7f7 0%,
+    #ffffff 45%,
+    #fff4f5 100%);
+}
+.brand{
+    transition:all .25s ease;
+}
+.brand:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(220,38,38,.08);
+}
+.brand-card{
+    background:white;
+    border:1px solid #f1f5f9;
+    border-radius:20px;
+    padding:18px;
+}
+.contact-card{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+    padding:24px;
+}
+.call-btn{
+    display:inline-block;
+    margin-top:16px;
+    background:#16a34a;
+    color:white;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:600;
+    transition:.25s;
+}
+.call-btn:hover{
+    transform:translateY(-2px);
+    background:#15803d;
+}
+.action-btn{
+    transition:.25s;
+}
+.action-btn:hover{
+    transform:translateY(-2px);
+}
+.save-btn{
+    background:#dc2626;
+    color:white;
+    box-shadow:0 10px 25px rgba(220,38,38,.18);
 }
 </style>
-
 </head>
-
 <body class="p-4">
-
 <div class="max-w-xl mx-auto">
-
 <div class="card">
-
 <!-- HERO -->
-
 <section class="hero-bg relative text-center px-6 py-10 overflow-hidden">
-
 <div class="absolute top-0 left-0 w-full h-full opacity-10">
 <svg viewBox="0 0 1200 300" class="w-full h-full">
 <path fill="#dc2626"
@@ -56,83 +91,54 @@ d="M0,160 C300,40 600,260 1200,120 L1200,0 L0,0 Z">
 </path>
 </svg>
 </div>
-
 <div class="relative z-10">
-
-<img
-src="LOGO.PNG"
-alt="Shree Om Agencies"
-class="h-24 mx-auto object-contain drop-shadow-lg">
-
-<h1 class="mt-5 text-4xl font-extrabold">
+<h1 class="mt-5 text-4xl font-extrabold tracking-tight">
 <span class="text-red-600">Shree Om</span>
 <span class="text-slate-800">Agencies</span>
 </h1>
-
 <p class="text-gray-500 mt-3">
 Premium Apparel Distribution Partner
 </p>
+<div class="inline-flex items-center gap-3 mt-7 px-6 py-4 bg-white/90 backdrop-blur rounded-full border border-white shadow-sm">
 
-<div class="inline-flex items-center gap-3 mt-7 px-6 py-4 bg-white rounded-full shadow-md">
+🛡️
 
-<span class="text-red-600 text-xl">🛡️</span>
-
-<span class="font-medium">
+<span class="font-medium text-slate-700">
 Authorized Distributors of Premium Brands
 </span>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- BRANDS -->
-
 <section class="px-6 py-10">
-
 <h2 class="text-center text-3xl font-bold text-slate-800 mb-8">
 Our Trusted Brands
 </h2>
-
 <div class="grid grid-cols-2 gap-4">
-
-<div class="brand bg-white rounded-2xl shadow-md p-4 flex items-center justify-center">
+<div class="brand brand-card flex items-center justify-center">
 <img src="DOLLAR.PNG" class="h-10 object-contain">
 </div>
-
-<div class="brand bg-white rounded-2xl shadow-md p-4 flex items-center justify-center">
+<div class="brand brand-card flex items-center justify-center">
 <img src="ESSA.PNG" class="h-10 object-contain">
 </div>
-
-<div class="brand bg-white rounded-2xl shadow-md p-4 flex items-center justify-center">
+<div class="brand brand-card flex items-center justify-center">
 <img src="PRITHVI.PNG" class="h-10 object-contain">
 </div>
-
-<div class="brand bg-white rounded-2xl shadow-md p-4 flex items-center justify-center">
+<div class="brand brand-card flex items-center justify-center">
 <img src="POOMER.PNG" class="h-10 object-contain">
 </div>
-
-<div class="brand bg-white rounded-2xl shadow-md p-4 flex items-center justify-center">
+<div class="brand brand-card flex items-center justify-center">
 <img src="DAZZLE.PNG" class="h-10 object-contain">
 </div>
-
-<div class="brand bg-white rounded-2xl shadow-md p-4 flex items-center justify-center">
+<div class="brand brand-card flex items-center justify-center">
 <img src="BARUN.PNG" class="h-10 object-contain">
 </div>
-
 </div>
-
 </section>
-
 <!-- STATS -->
-
 <section class="px-6">
-
-<div class="bg-gray-50 rounded-3xl p-6">
-
+<div class="bg-slate-50 border border-slate-100 rounded-3xl p-6">
 <div class="grid grid-cols-3 text-center">
-
 <div>
 <div class="text-red-600 text-3xl font-bold">
 1997
@@ -141,7 +147,6 @@ Our Trusted Brands
 Trusted Since
 </div>
 </div>
-
 <div>
 <div class="text-red-600 text-3xl font-bold">
 8+
@@ -150,7 +155,6 @@ Trusted Since
 Brands
 </div>
 </div>
-
 <div>
 <div class="text-red-600 text-3xl font-bold">
 30+
@@ -159,117 +163,64 @@ Brands
 Years
 </div>
 </div>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- CONTACT -->
-
 <section class="px-6 py-10">
-
-<h2 class="text-center text-3xl font-bold mb-8">
+<h2 class="text-center text-3xl font-bold mb-8 text-slate-800">
 Contact Us
 </h2>
-
 <div class="space-y-4">
-
-<div class="bg-green-50 border border-green-200 rounded-3xl p-5">
-
+<div class="contact-card">
 <div class="text-gray-500 text-sm">
 Mahaveer Pareek
 </div>
-
-<div class="text-2xl font-bold mt-1">
+<div class="text-2xl font-bold mt-1 text-slate-900">
 +91 94482 74079
 </div>
 
-<a href="tel:+919448274079"
-class="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded-full font-medium">
 📞 Tap to Call
-</a>
-
 </div>
-
-<div class="bg-green-50 border border-green-200 rounded-3xl p-5">
-
+<div class="contact-card">
 <div class="text-gray-500 text-sm">
 Office
 </div>
-
-<div class="text-2xl font-bold mt-1">
+<div class="text-2xl font-bold mt-1 text-slate-900">
 +91 94499 26891
 </div>
 
-<a href="tel:+919449926891"
-class="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded-full font-medium">
 📞 Tap to Call
-</a>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- ADDRESS -->
-
 <section class="px-6">
-
-<div class="bg-gray-50 rounded-3xl p-6">
-
-<h3 class="font-bold text-xl">
+<div class="bg-slate-50 border border-slate-100 rounded-3xl p-6">
+<h3 class="font-bold text-xl text-slate-800">
 📍 Shree Om Agencies
 </h3>
-
 <p class="text-gray-600 mt-4 leading-relaxed">
 Opp Sapthagiri PU College<br>
 1st Cross, Sapthagiri Extension<br>
 Tumkur – 572102
 </p>
-
 </div>
-
 </section>
-
 <!-- BUTTONS -->
-
 <section class="px-6 py-10">
-
 <div class="grid grid-cols-3 gap-4">
 
-<a
-href="contact.vcf"
-class="bg-red-600 text-white text-center py-4 rounded-2xl font-semibold shadow-lg">
 💾 Save
-</a>
-
-<a
-href="#"
-class="bg-white border border-gray-200 text-center py-4 rounded-2xl font-semibold">
 🔗 Share
-</a>
-
-<a
-href="https://maps.google.com"
-target="_blank"
-class="bg-white border border-gray-200 text-center py-4 rounded-2xl font-semibold">
 📍 Maps
-</a>
-
 </div>
-
 </section>
-
+<!-- FOOTER -->
 <div class="pb-8 text-center text-gray-400 text-sm">
-❤ Thank you for your trust and support
+Thank you for your trust and support
 </div>
-
 </div>
-
 </div>
-
 </body>
 </html>
