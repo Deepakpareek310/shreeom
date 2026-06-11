@@ -36,16 +36,17 @@ body{
     );
 }
 
-.brand-card{
+..brand-card{
     background:white;
     border:1px solid #e2e8f0;
     border-radius:20px;
     height:130px;
-    padding:12px;
+    padding:10px;
     transition:.3s;
     display:flex;
     align-items:center;
     justify-content:center;
+    overflow:hidden;
 }
 
 .brand-card:hover{
@@ -135,27 +136,33 @@ Our Trusted Brands
 <div class="grid grid-cols-2 gap-4">
 
 <div class="brand-card">
-<img src="DOLLAR.PNG" alt="Dollar">
+    <img src="DOLLAR.PNG"
+         style="max-width:95%; max-height:95%; transform:scale(1.5); object-fit:contain;">
 </div>
 
 <div class="brand-card">
-<img src="ESSA.PNG" alt="ESSA">
+    <img src="ESSA.PNG"
+         style="max-width:95%; max-height:95%; transform:scale(1.7); object-fit:contain;">
 </div>
 
 <div class="brand-card">
-<img src="PRITHVI.PNG" alt="Prithvi">
+    <img src="PRITHVI.PNG"
+         style="max-width:95%; max-height:95%; object-fit:contain;">
 </div>
 
 <div class="brand-card">
-<img src="POOMER.PNG" alt="Poomer">
+    <img src="POOMER.PNG"
+         style="max-width:95%; max-height:95%; transform:scale(1.35); object-fit:contain;">
 </div>
 
 <div class="brand-card">
-<img src="DAZZLE.PNG" alt="Dazzle">
+    <img src="DAZZLE.PNG"
+         style="max-width:95%; max-height:95%; object-fit:contain;">
 </div>
 
 <div class="brand-card">
-<img src="BARUN.PNG" alt="Barun">
+    <img src="BARUN.PNG"
+         style="max-width:95%; max-height:95%; transform:scale(1.9); object-fit:contain;">
 </div>
 
 </div>
