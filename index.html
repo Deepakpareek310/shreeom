@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 body{
     font-family:'Inter',sans-serif;
     background:linear-gradient(180deg,#f8fafc,#ffffff);
@@ -21,20 +22,41 @@ body{
     border-radius:32px;
     overflow:hidden;
     box-shadow:
-    0 10px 40px rgba(0,0,0,.06);
+    0 5px 20px rgba(0,0,0,.05),
+    0 20px 50px rgba(0,0,0,.08);
+}
+
+.hero{
+    background:
+    linear-gradient(
+    135deg,
+    #fff7f7 0%,
+    #ffffff 50%,
+    #fff1f2 100%
+    );
 }
 
 .brand-card{
     background:white;
     border:1px solid #e2e8f0;
     border-radius:20px;
-    padding:20px;
+    height:130px;
+    padding:12px;
     transition:.3s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .brand-card:hover{
     transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.brand-card img{
+    width:90%;
+    height:90%;
+    object-fit:contain;
 }
 
 .contact-card{
@@ -44,16 +66,6 @@ body{
     padding:24px;
 }
 
-.hero{
-    background:
-    linear-gradient(
-    135deg,
-    #fff7f7,
-    #ffffff,
-    #fff1f2
-    );
-}
-
 .action-btn{
     transition:.3s;
 }
@@ -61,8 +73,14 @@ body{
 .action-btn:hover{
     transform:translateY(-2px);
 }
-</style>
 
+.stat-card{
+    background:#f8fafc;
+    border-radius:18px;
+    padding:20px;
+}
+
+</style>
 </head>
 
 <body class="p-4">
@@ -79,26 +97,25 @@ body{
 ⭐ Trusted Since 1997
 </div>
 
-<h1 class="mt-6 text-4xl font-extrabold tracking-tight">
+<h1 class="mt-6 text-4xl font-extrabold">
 <span class="text-red-600">Shree Om</span>
 <span class="text-slate-900">Agencies</span>
 </h1>
 
-<p class="mt-4 text-lg text-slate-600 max-w-md mx-auto">
-Authorized Distributor of Premium Innerwear, Sportswear &
-Lifestyle Brands Serving Retailers Across Karnataka
+<p class="mt-4 text-lg text-slate-600 leading-relaxed">
+Authorized Distributor of Premium Innerwear,
+Sportswear & Lifestyle Brands Serving Retailers
+Across Karnataka
 </p>
 
-<div class="flex flex-wrap justify-center gap-3 mt-8">
+<div class="flex justify-center gap-3 mt-8 flex-wrap">
 
-<a
-href="tel:+919448274079"
+<a href="tel:+919448274079"
 class="action-btn bg-red-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
 📞 Call Now
 </a>
 
-<a
-href="https://wa.me/919448274079"
+<a href="https://wa.me/919448274079"
 class="action-btn bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
 💬 WhatsApp
 </a>
@@ -117,28 +134,28 @@ Our Trusted Brands
 
 <div class="grid grid-cols-2 gap-4">
 
-<div class="brand-card flex justify-center items-center">
-<img src="DOLLAR.PNG" class="h-12 object-contain">
+<div class="brand-card">
+<img src="DOLLAR.PNG" alt="Dollar">
 </div>
 
-<div class="brand-card flex justify-center items-center">
-<img src="ESSA.PNG" class="h-12 object-contain">
+<div class="brand-card">
+<img src="ESSA.PNG" alt="ESSA">
 </div>
 
-<div class="brand-card flex justify-center items-center">
-<img src="PRITHVI.PNG" class="h-12 object-contain">
+<div class="brand-card">
+<img src="PRITHVI.PNG" alt="Prithvi">
 </div>
 
-<div class="brand-card flex justify-center items-center">
-<img src="POOMER.PNG" class="h-12 object-contain">
+<div class="brand-card">
+<img src="POOMER.PNG" alt="Poomer">
 </div>
 
-<div class="brand-card flex justify-center items-center">
-<img src="DAZZLE.PNG" class="h-12 object-contain">
+<div class="brand-card">
+<img src="DAZZLE.PNG" alt="Dazzle">
 </div>
 
-<div class="brand-card flex justify-center items-center">
-<img src="BARUN.PNG" class="h-12 object-contain">
+<div class="brand-card">
+<img src="BARUN.PNG" alt="Barun">
 </div>
 
 </div>
@@ -149,7 +166,7 @@ Our Trusted Brands
 
 <section class="px-6 pb-8">
 
-<div class="bg-red-50 rounded-3xl p-6 border border-red-100">
+<div class="bg-red-50 border border-red-100 rounded-3xl p-6">
 
 <h3 class="text-xl font-bold text-slate-900">
 Why Retailers Choose Us
@@ -177,7 +194,7 @@ Why Retailers Choose Us
 
 <div class="grid grid-cols-3 gap-3">
 
-<div class="bg-slate-50 rounded-2xl p-5 text-center">
+<div class="stat-card text-center">
 
 <div class="text-3xl font-bold text-red-600">
 30+
@@ -189,7 +206,7 @@ Years
 
 </div>
 
-<div class="bg-slate-50 rounded-2xl p-5 text-center">
+<div class="stat-card text-center">
 
 <div class="text-3xl font-bold text-red-600">
 8+
@@ -201,7 +218,7 @@ Brands
 
 </div>
 
-<div class="bg-slate-50 rounded-2xl p-5 text-center">
+<div class="stat-card text-center">
 
 <div class="text-3xl font-bold text-red-600">
 1997
@@ -243,14 +260,12 @@ Mahaveer Pareek
 
 <div class="flex gap-3 mt-5">
 
-<a
-href="tel:+919448274079"
+<a href="tel:+919448274079"
 class="bg-red-600 text-white px-4 py-2 rounded-full">
 📞 Call
 </a>
 
-<a
-href="https://wa.me/919448274079"
+<a href="https://wa.me/919448274079"
 class="bg-green-600 text-white px-4 py-2 rounded-full">
 💬 WhatsApp
 </a>
@@ -269,10 +284,9 @@ Office
 +91 94499 26891
 </div>
 
-<div class="mt-4">
+<div class="mt-5">
 
-<a
-href="tel:+919449926891"
+<a href="tel:+919449926891"
 class="bg-red-600 text-white px-4 py-2 rounded-full">
 📞 Call Office
 </a>
@@ -289,7 +303,7 @@ class="bg-red-600 text-white px-4 py-2 rounded-full">
 
 <section class="px-6 pb-10">
 
-<div class="bg-slate-50 rounded-3xl border p-6">
+<div class="bg-slate-50 border rounded-3xl p-6">
 
 <h3 class="font-bold text-xl text-slate-900">
 📍 Visit Our Office
@@ -308,7 +322,7 @@ href="https://maps.google.com"
 target="_blank"
 class="inline-block mt-5 bg-slate-900 text-white px-5 py-3 rounded-full">
 
-📍 Open in Maps
+📍 Open in Google Maps
 
 </a>
 
@@ -316,7 +330,7 @@ class="inline-block mt-5 bg-slate-900 text-white px-5 py-3 rounded-full">
 
 </section>
 
-<!-- ACTIONS -->
+<!-- QUICK ACTIONS -->
 
 <section class="px-6 pb-10">
 
@@ -353,9 +367,7 @@ class="bg-slate-100 rounded-2xl py-4 font-semibold text-center">
 <!-- FOOTER -->
 
 <div class="pb-8 text-center text-slate-400 text-sm">
-
 © Shree Om Agencies • Since 1997
-
 </div>
 
 </div>
