@@ -3,20 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Shree Om Agencies</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
 body{
     font-family:'Inter',sans-serif;
     background:#f8fafc;
 }
-
 .card{
     background:white;
     border-radius:24px;
@@ -25,7 +19,6 @@ body{
     0 5px 20px rgba(0,0,0,.05),
     0 15px 40px rgba(0,0,0,.08);
 }
-
 .hero{
     background:linear-gradient(
     135deg,
@@ -34,255 +27,181 @@ body{
     #fff1f2 100%
     );
 }
-
 .brand-card{
     background:white;
     border:1px solid #e2e8f0;
     border-radius:16px;
-    height:85px;
-    padding:8px;
+    height:110px;
+    padding:12px;
     display:flex;
     align-items:center;
     justify-content:center;
     overflow:hidden;
     transition:.25s;
 }
-
 .brand-card:hover{
     transform:translateY(-2px);
 }
-
+.brand-card img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+}
 .contact-card{
     background:white;
     border:1px solid #e2e8f0;
     border-radius:18px;
     padding:14px;
 }
-
 .stat-card{
     background:#f8fafc;
     border-radius:14px;
     padding:12px;
 }
-
 .action-btn{
     transition:.25s;
 }
-
 .action-btn:hover{
     transform:translateY(-2px);
 }
-
 </style>
 </head>
-
 <body class="p-3">
-
 <div class="max-w-xl mx-auto">
-
 <div class="card">
-
 <!-- HERO -->
-
 <section class="hero text-center px-5 py-5">
-
 <div class="inline-flex items-center px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-semibold">
 ⭐ Trusted Since 1997
 </div>
-
 <h1 class="mt-3 text-3xl font-extrabold">
 <span class="text-red-600">Shree Om</span>
 <span class="text-slate-900">Agencies</span>
 </h1>
-
 <p class="mt-3 text-sm text-slate-600">
 Authorized Distributor of Premium Innerwear,
 Sportswear & Lifestyle Brands Across Tumkur
 </p>
-
 <div class="flex justify-center gap-2 mt-4 flex-wrap">
-
 <a href="tel:+919448274079"
 class="action-btn bg-red-600 text-white px-5 py-2 rounded-full font-semibold">
 📞 Call
 </a>
-
 <a href="https://wa.me/919448274079"
 class="action-btn bg-green-600 text-white px-5 py-2 rounded-full font-semibold">
 💬 WhatsApp
 </a>
-
 </div>
-
 </section>
-
 <!-- STATS -->
-
 <section class="px-5 pb-4">
-
 <div class="grid grid-cols-3 gap-2">
-
 <div class="stat-card text-center">
 <div class="text-2xl font-bold text-red-600">30+</div>
 <div class="text-xs text-slate-500">Years</div>
 </div>
-
 <div class="stat-card text-center">
 <div class="text-2xl font-bold text-red-600">8+</div>
 <div class="text-xs text-slate-500">Brands</div>
 </div>
-
 <div class="stat-card text-center">
 <div class="text-2xl font-bold text-red-600">1997</div>
 <div class="text-xs text-slate-500">Since</div>
 </div>
-
 </div>
-
 </section>
-
 <!-- BRANDS -->
-
 <section class="px-5 py-4">
-
 <h2 class="text-center text-xl font-bold text-slate-900 mb-3">
 Authorized Brands
 </h2>
-
 <div class="grid grid-cols-2 gap-3">
-
 <div class="brand-card">
-<img src="DOLLAR.PNG"
-style="max-width:95%;max-height:95%;transform:scale(1.25);object-fit:contain;">
+<img src="DOLLAR.PNG" alt="Dollar">
 </div>
-
 <div class="brand-card">
-<img src="ESSA.PNG"
-style="max-width:95%;max-height:95%;transform:scale(1.35);object-fit:contain;">
+<img src="ESSA.PNG" alt="Essa">
 </div>
-
 <div class="brand-card">
-<img src="PRITHVI.PNG"
-style="max-width:95%;max-height:95%;object-fit:contain;">
+<img src="PRITHVI.PNG" alt="Prithvi">
 </div>
-
 <div class="brand-card">
-<img src="POOMER.PNG"
-style="max-width:95%;max-height:95%;transform:scale(1.15);object-fit:contain;">
+<img src="POOMER.PNG" alt="Poomer">
 </div>
-
 <div class="brand-card">
-<img src="DAZZLE.PNG"
-style="max-width:95%;max-height:95%;object-fit:contain;">
+<img src="DAZZLE.PNG" alt="Dazzle">
 </div>
-
 <div class="brand-card">
-<img src="BARUN.PNG"
-style="max-width:95%;max-height:95%;transform:scale(1.5);object-fit:contain;">
+<img src="BARUN.PNG" alt="Barun">
 </div>
-
 </div>
-
 </section>
-
 <!-- CONTACT -->
-
 <section class="px-5 py-4">
-
 <h2 class="text-center text-xl font-bold text-slate-900 mb-3">
 Contact
 </h2>
-
 <div class="grid grid-cols-2 gap-3">
-
 <div class="contact-card">
-
 <div class="text-xs text-slate-500">
 Managing Partner
 </div>
-
 <div class="text-lg font-bold mt-1">
 Mahaveer Pareek
 </div>
-
 <div class="text-sm mt-1">
 +91 94482 74079
 </div>
-
 <div class="flex gap-2 mt-3 flex-wrap">
-
 <a href="tel:+919448274079"
 class="bg-red-600 text-white px-3 py-2 rounded-full text-xs">
 📞 Call
 </a>
-
 <a href="https://wa.me/919448274079"
 class="bg-green-600 text-white px-3 py-2 rounded-full text-xs">
 💬 WhatsApp
 </a>
-
 </div>
-
 </div>
-
 <div class="contact-card">
-
 <div class="text-xs text-slate-500">
 Office
 </div>
-
 <div class="text-lg font-bold mt-1">
 +91 94499 26891
 </div>
-
 <a href="tel:+919449926891"
 class="inline-block mt-3 bg-red-600 text-white px-3 py-2 rounded-full text-xs">
 📞 Call Office
 </a>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- ADDRESS -->
-
 <section class="px-5 pb-4">
-
 <div class="bg-slate-50 border rounded-2xl p-4">
-
 <h3 class="font-bold text-lg">
 📍 Visit Our Office
 </h3>
-
 <p class="mt-3 text-sm text-slate-600 leading-6">
 Opp Sapthagiri PU College<br>
 1st Cross, Sapthagiri Extension<br>
 Tumkur – 572102
 </p>
-
-<a href="YOUR_GOOGLE_MAPS_LINK"
+<a href="https://maps.google.com/?q=Opp+Sapthagiri+PU+College+1st+Cross+Sapthagiri+Extension+Tumkur+572102"
 target="_blank"
 class="inline-block mt-3 bg-slate-900 text-white px-4 py-2 rounded-full text-sm">
 📍 Open Maps
 </a>
-
 </div>
-
 </section>
-
 <!-- QUICK ACTIONS -->
-
 <section class="px-5 pb-5">
-
 <div class="grid grid-cols-3 gap-2">
-
 <button onclick="window.print()"
 class="bg-slate-100 rounded-xl py-3 text-sm font-semibold">
 💾 Save
 </button>
-
 <button
 onclick="
 if(navigator.share){
@@ -295,23 +214,17 @@ url:window.location.href
 class="bg-slate-100 rounded-xl py-3 text-sm font-semibold">
 🔗 Share
 </button>
-
-<a href="YOUR_GOOGLE_MAPS_LINK"
+<a href="https://maps.google.com/?q=Opp+Sapthagiri+PU+College+1st+Cross+Sapthagiri+Extension+Tumkur+572102"
+target="_blank"
 class="bg-slate-100 rounded-xl py-3 text-sm font-semibold text-center">
 📍 Maps
 </a>
-
 </div>
-
 </section>
-
 <div class="pb-5 text-center text-xs text-slate-400">
 © Shree Om Agencies • Since 1997
 </div>
-
 </div>
-
 </div>
-
 </body>
 </html>
