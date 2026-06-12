@@ -4,472 +4,529 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shree Om Agencies</title>
-<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-body {
-  margin:0;
-  padding:12px;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
   font-family:'Inter',sans-serif;
-  background:#f0f2f5;
+  background:#eceef2;
+  display:flex;
+  justify-content:center;
+  padding:14px;
   min-height:100vh;
 }
 
-/* ── OUTER CARD ── */
-.card {
+/* ══ CARD ══ */
+.card{
+  width:100%;
+  max-width:480px;
   background:#fff;
-  border-radius:28px;
+  border-radius:30px;
   overflow:hidden;
   position:relative;
-  max-width:430px;
-  margin:0 auto;
-  box-shadow:0 10px 40px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.06);
+  box-shadow:0 14px 50px rgba(0,0,0,.13),0 2px 8px rgba(0,0,0,.07);
 }
 
 /* Red corner triangles */
-.card::before {
+.card::before{
   content:"";
-  position:absolute;
-  top:0; left:0;
-  width:88px; height:88px;
-  background:linear-gradient(135deg,#c8102e,#e5192f);
+  position:absolute;top:0;left:0;
+  width:100px;height:100px;
+  background:linear-gradient(135deg,#b91c1c,#dc2626);
   clip-path:polygon(0 0,100% 0,0 100%);
-  z-index:10;
+  z-index:5;
 }
-.card::after {
+.card::after{
   content:"";
-  position:absolute;
-  bottom:0; right:0;
-  width:88px; height:88px;
-  background:linear-gradient(135deg,#c8102e,#e5192f);
+  position:absolute;bottom:0;right:0;
+  width:100px;height:100px;
+  background:linear-gradient(135deg,#b91c1c,#dc2626);
   clip-path:polygon(100% 0,100% 100%,0 100%);
-  z-index:10;
+  z-index:5;
 }
 
-/* ── HERO ── */
-.hero {
-  background:linear-gradient(160deg,#fff7f7 0%,#ffffff 50%,#fff1f2 100%);
-  padding:26px 20px 22px;
+/* ══ HERO ══ */
+.hero{
+  background:
+    radial-gradient(ellipse at 50% -10%,rgba(220,38,38,.07) 0%,transparent 65%),
+    radial-gradient(ellipse at 50% 110%,rgba(220,38,38,.06) 0%,transparent 65%),
+    linear-gradient(180deg,#fff7f7 0%,#fff 40%,#fff1f2 100%);
+  padding:28px 24px 24px;
   text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* Mandala-like decorative ring pattern top */
+.hero::before{
+  content:"";
+  position:absolute;top:-60px;left:50%;transform:translateX(-50%);
+  width:260px;height:120px;
+  background:radial-gradient(ellipse,rgba(220,38,38,.06) 0%,transparent 70%);
+  pointer-events:none;
 }
 
 /* Om logo */
-.logo-ring {
-  width:88px; height:88px;
+.logo-ring{
+  width:90px;height:90px;
   border-radius:50%;
-  border:2.5px solid #c8102e;
+  border:3px solid #dc2626;
   background:#fff;
-  display:flex; align-items:center; justify-content:center;
-  margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;
   overflow:hidden;
-  box-shadow:0 4px 16px rgba(200,16,46,.15);
+  box-shadow:0 0 0 5px rgba(220,38,38,.1),0 6px 20px rgba(220,38,38,.18);
+  position:relative;z-index:2;
 }
-.logo-ring img { width:76px; height:76px; object-fit:contain; }
+.logo-ring img{width:78px;height:78px;object-fit:contain}
 
 /* Title */
-.title {
-  font-size:36px;
-  font-weight:900;
-  line-height:1.1;
-  letter-spacing:-0.3px;
-  margin-bottom:10px;
-}
-.title .red  { color:#e5192f; }
-.title .dark { color:#111827; }
+.title{font-size:38px;font-weight:900;line-height:1.1;letter-spacing:-0.5px;margin-bottom:10px}
+.title .red{color:#dc2626}
+.title .dark{color:#111827}
 
-/* Divider + badge row */
-.divider-badge {
-  display:flex; align-items:center; justify-content:center;
-  gap:8px; margin-bottom:12px;
+/* Badge row */
+.badge-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;margin-bottom:13px;
 }
-.div-line {
-  height:1.5px; width:52px;
-  background:#e5192f;
+.badge-line{
+  flex:1;max-width:56px;height:1.5px;
+  background:linear-gradient(90deg,transparent,#dc2626);
   position:relative;
 }
-/* Small diamond on each line end */
-.div-line::before, .div-line::after {
-  content:"";
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:5px; height:5px;
-  background:#e5192f;
-  border-radius:50%;
+.badge-line.right{background:linear-gradient(90deg,#dc2626,transparent)}
+.badge-line::after{
+  content:"◆";
+  position:absolute;
+  font-size:6px;color:#dc2626;
+  top:50%;transform:translateY(-50%);
 }
-.div-line::before { left:-2px; }
-.div-line::after  { right:-2px; }
-
-.badge {
-  background:#e5192f;
-  color:#fff;
-  font-size:10.5px;
-  font-weight:800;
-  letter-spacing:1.2px;
-  padding:5px 16px;
-  border-radius:999px;
-}
-
-.hero-sub {
-  font-size:13px;
-  color:#4b5563;
-  line-height:1.7;
-  margin-bottom:18px;
-}
-
-/* CTA buttons */
-.cta-row { display:flex; justify-content:center; gap:12px; }
-.btn-cta {
-  display:inline-flex; align-items:center; gap:7px;
-  padding:11px 26px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:700;
-  color:#fff;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,.13);
-  transition:transform .15s;
-}
-.btn-cta:hover { transform:translateY(-2px); }
-.btn-call { background:#dc2626; }
-.btn-wa   { background:#22c55e; }
-
-/* ── STATS ── */
-.stats-wrap { padding:0 18px 18px; }
-.stats-box {
-  border:1.5px solid #f1f5f9;
-  border-radius:20px;
-  padding:16px 8px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  box-shadow:0 3px 14px rgba(0,0,0,.05);
-}
-.stat-col { text-align:center; }
-.stat-icon { font-size:22px; margin-bottom:3px; }
-.stat-num  { font-size:28px; font-weight:900; color:#dc2626; line-height:1; }
-.stat-lbl  { font-size:11px; color:#6b7280; margin-top:4px; line-height:1.4; }
-
-/* ── SECTION DIVIDER ── */
-.sec-title {
-  display:flex; align-items:center; justify-content:center;
-  gap:10px; margin-bottom:14px;
-}
-.sec-title .tl { height:1.5px; width:48px; background:#fca5a5; }
-.sec-title h2 {
-  font-size:14px; font-weight:900;
-  color:#111827; letter-spacing:.5px;
+.badge-line::after{right:-4px}
+.badge-line.right::after{left:-4px;right:auto}
+.badge{
+  background:#dc2626;color:#fff;
+  font-size:10.5px;font-weight:800;letter-spacing:1.3px;
+  padding:5px 18px;border-radius:999px;
   white-space:nowrap;
 }
 
-/* ── BRANDS ── */
-.brands-wrap { padding:0 18px 18px; }
-.brands-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
+.hero-sub{
+  font-size:13.5px;color:#4b5563;
+  line-height:1.7;margin-bottom:20px;
 }
-.brand-card {
+
+/* CTA */
+.cta-row{display:flex;justify-content:center;gap:14px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:999px;
+  font-size:14.5px;font-weight:700;color:#fff;
+  text-decoration:none;
+  box-shadow:0 8px 22px rgba(0,0,0,.15);
+  transition:transform .15s,box-shadow .15s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.btn-call{background:#dc2626}
+.btn-wa{background:#16a34a}
+
+/* ══ STATS ══ */
+.stats-wrap{padding:0 20px 18px;position:relative;z-index:2}
+.stats-box{
   border:1.5px solid #f1f5f9;
+  border-radius:22px;
+  padding:18px 10px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
+  background:#fff;
+}
+.stat-col{text-align:center;padding:0 2px}
+.stat-svg{display:flex;justify-content:center;margin-bottom:6px}
+.stat-num{font-size:30px;font-weight:900;color:#dc2626;line-height:1}
+.stat-lbl{font-size:11px;color:#6b7280;margin-top:5px;line-height:1.45}
+
+/* ══ SECTION TITLE ══ */
+.sec-title{
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;margin-bottom:14px;
+}
+.sec-line{height:1.5px;width:50px;background:#fca5a5}
+.sec-title h2{
+  font-size:14px;font-weight:900;color:#111827;
+  letter-spacing:.6px;white-space:nowrap;
+}
+
+/* ══ BRANDS ══ */
+.brands-wrap{padding:2px 20px 18px;position:relative;z-index:2}
+.brands-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:11px;
+}
+.brand-card{
+  border:1.5px solid #f0f4f8;
   border-radius:14px;
-  height:84px;
-  display:flex; align-items:center; justify-content:center;
-  padding:8px;
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  height:86px;
+  display:flex;align-items:center;justify-content:center;
+  padding:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+  background:#fff;
   overflow:hidden;
 }
-.brand-card img { max-width:100%; max-height:100%; object-fit:contain; }
+.brand-card img{max-width:100%;max-height:100%;object-fit:contain}
 
-/* ── CONTACT ── */
-.contact-wrap { padding:0 18px 16px; }
-.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.contact-card {
-  border:1.5px solid #f1f5f9;
+/* ══ CONTACT ══ */
+.contact-wrap{padding:0 20px 16px;position:relative;z-index:2}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.contact-card{
+  border:1.5px solid #f0f4f8;
   border-radius:16px;
-  padding:13px 12px;
-  box-shadow:0 3px 12px rgba(0,0,0,.04);
-}
-.c-name {
-  font-size:14px; font-weight:800; color:#111827;
-  display:flex; align-items:center; gap:5px;
-  margin-bottom:4px;
-}
-.c-phone {
-  font-size:12px; color:#374151;
-  display:flex; align-items:center; gap:4px;
-  margin-bottom:10px; font-weight:500;
-}
-.c-btns { display:flex; gap:7px; }
-.c-btn {
-  display:inline-flex; align-items:center; gap:5px;
-  padding:6px 11px;
-  border-radius:999px;
-  font-size:11.5px; font-weight:700;
-  color:#fff; text-decoration:none;
-  box-shadow:0 3px 8px rgba(0,0,0,.13);
-}
-.c-btn-call { background:#dc2626; }
-.c-btn-wa   { background:#22c55e; }
-
-/* ── LOCATION ── */
-.loc-wrap { padding:0 18px 16px; }
-.loc-card {
-  border:1.5px solid #e2e8f0;
-  border-radius:16px;
-  padding:12px;
-  display:flex; align-items:center; gap:10px;
-  text-decoration:none;
-  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  padding:14px 13px;
+  box-shadow:0 3px 14px rgba(0,0,0,.05);
   background:#fff;
+  border-left:3px solid #fecaca;
+}
+.c-name{
+  font-size:14px;font-weight:800;color:#111827;
+  display:flex;align-items:center;gap:6px;margin-bottom:5px;
+}
+.c-phone{
+  font-size:12px;color:#374151;font-weight:500;
+  display:flex;align-items:center;gap:5px;margin-bottom:11px;
+}
+.c-btns{display:flex;gap:7px}
+.c-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 12px;border-radius:999px;
+  font-size:11.5px;font-weight:700;color:#fff;
+  text-decoration:none;
+  box-shadow:0 3px 9px rgba(0,0,0,.14);
+  transition:transform .12s;
+}
+.c-btn:hover{transform:translateY(-1px)}
+.c-call{background:#dc2626}
+.c-wa{background:#16a34a}
+
+/* ══ LOCATION ══ */
+.loc-wrap{padding:0 20px 16px;position:relative;z-index:2}
+.loc-card{
+  display:flex;align-items:center;gap:11px;
+  border:1.5px solid #e8edf2;
+  border-radius:17px;
+  padding:13px;
+  text-decoration:none;
+  background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
   transition:transform .15s;
 }
-.loc-card:hover { transform:translateY(-1px); }
-.loc-pin {
-  width:48px; height:48px; flex-shrink:0;
-  border-radius:50%;
-  background:#fff1f2;
-  display:flex; align-items:center; justify-content:center;
-  font-size:22px;
+.loc-card:hover{transform:translateY(-1px)}
+.loc-pin{
+  width:50px;height:50px;flex-shrink:0;
+  border-radius:50%;background:#fff1f2;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
 }
-.loc-text { flex:1; }
-.loc-name { font-size:12.5px; font-weight:700; color:#111827; }
-.loc-addr { font-size:11px; color:#6b7280; line-height:1.5; margin-top:2px; }
-.map-box {
-  width:86px; height:58px; flex-shrink:0;
-  border-radius:10px; overflow:hidden;
-  border:1px solid #e2e8f0;
+.loc-info{flex:1}
+.loc-name{font-size:13px;font-weight:800;color:#111827}
+.loc-addr{font-size:11px;color:#6b7280;line-height:1.55;margin-top:2px}
+.map-thumb{
+  width:90px;height:60px;flex-shrink:0;
+  border-radius:11px;overflow:hidden;
+  border:1.5px solid #e2e8f0;
   position:relative;
 }
-.map-box img { width:100%; height:100%; object-fit:cover; }
-.map-open {
-  position:absolute; bottom:0; left:0; right:0;
-  background:rgba(255,255,255,.93);
-  font-size:9.5px; font-weight:600; color:#1a73e8;
-  text-align:center; padding:2px 0;
-  display:flex; align-items:center; justify-content:center; gap:2px;
+.map-thumb img{width:100%;height:100%;object-fit:cover}
+.map-lbl{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.94);
+  font-size:9.5px;font-weight:600;color:#1a73e8;
+  text-align:center;padding:3px 2px;
+  display:flex;align-items:center;justify-content:center;gap:2px;
 }
 
-/* ── WHY US ── */
-.why-wrap { padding:0 18px 16px; }
-.why-grid {
-  border:1.5px solid #f1f5f9;
-  border-radius:16px;
-  padding:16px 10px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
+/* ══ WHY US ══ */
+.why-wrap{padding:0 20px 16px;position:relative;z-index:2}
+.why-box{
+  border:1.5px solid #f0f4f8;
+  border-radius:18px;
+  padding:18px 8px;
+  display:grid;grid-template-columns:repeat(4,1fr);
   gap:6px;
-  box-shadow:0 2px 10px rgba(0,0,0,.04);
-}
-.why-item { text-align:center; }
-.why-icon { font-size:22px; margin-bottom:5px; }
-.why-lbl  { font-size:10.5px; color:#334155; font-weight:600; line-height:1.4; }
-
-/* ── GSTIN FOOTER ── */
-.gstin-footer {
-  background:linear-gradient(135deg,#c8102e,#e5192f);
-  padding:18px 20px;
-}
-.gstin-box {
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
   background:#fff;
-  border-radius:12px;
-  padding:10px 14px;
-  text-align:center;
 }
-.gstin-lbl { font-size:11px; color:#6b7280; font-weight:500; letter-spacing:.5px; }
-.gstin-val { font-size:19px; font-weight:900; color:#111827; margin-top:1px; letter-spacing:.3px; }
+.why-item{text-align:center}
+.why-icon{display:flex;justify-content:center;margin-bottom:6px}
+.why-lbl{font-size:10.5px;color:#334155;font-weight:600;line-height:1.45}
+
+/* ══ GSTIN ══ */
+.gstin-footer{
+  background:linear-gradient(135deg,#b91c1c,#dc2626);
+  padding:18px 22px;
+  position:relative;z-index:2;
+}
+.gstin-box{
+  background:#fff;border-radius:13px;
+  padding:11px 16px;text-align:center;
+}
+.gstin-lbl{font-size:11px;color:#9ca3af;font-weight:500;letter-spacing:.5px}
+.gstin-val{font-size:20px;font-weight:900;color:#111827;margin-top:2px;letter-spacing:.3px}
 </style>
 </head>
 <body>
 <div class="card">
 
-  <!-- ══════════ HERO ══════════ -->
-  <div class="hero">
-    <div class="logo-ring">
-      <img src="LOGO.PNG" alt="Shree Om Logo">
-    </div>
-
-    <div class="title">
-      <span class="red">Shree Om</span> <span class="dark">Agencies</span>
-    </div>
-
-    <div class="divider-badge">
-      <span class="div-line"></span>
-      <span class="badge">WHOLESALE DISTRIBUTOR</span>
-      <span class="div-line"></span>
-    </div>
-
-    <p class="hero-sub">
-      Premium Innerwear, Kids T-Shirts, Socks &amp; Sportswear<br>
-      Across Tumkur, Karnataka
-    </p>
-
-    <div class="cta-row">
-      <a href="tel:+919448274079" class="btn-cta btn-call">
-        <!-- phone icon -->
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/>
-        </svg>
-        Call Now
-      </a>
-      <a href="https://wa.me/919448274079" class="btn-cta btn-wa">
-        <!-- whatsapp icon -->
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
-        </svg>
-        WhatsApp
-      </a>
-    </div>
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="logo-ring">
+    <img src="LOGO.PNG" alt="Shree Om">
   </div>
 
-  <!-- ══════════ STATS ══════════ -->
-  <div class="stats-wrap">
-    <div class="stats-box">
-      <div class="stat-col">
-        <div class="stat-icon">🛡️</div>
-        <div class="stat-num">30+</div>
-        <div class="stat-lbl">Years<br>of Trust</div>
-      </div>
-      <div class="stat-col">
-        <div class="stat-icon">🏷️</div>
-        <div class="stat-num">8+</div>
-        <div class="stat-lbl">Premium<br>Brands</div>
-      </div>
-      <div class="stat-col">
-        <div class="stat-icon">👥</div>
-        <div class="stat-num">500+</div>
-        <div class="stat-lbl">Retailers<br>Served</div>
-      </div>
-      <div class="stat-col">
-        <div class="stat-icon">📅</div>
-        <div class="stat-num">1997</div>
-        <div class="stat-lbl">Serving<br>Since 1997</div>
-      </div>
-    </div>
+  <div class="title">
+    <span class="red">Shree Om</span> <span class="dark">Agencies</span>
   </div>
 
-  <!-- ══════════ BRANDS ══════════ -->
-  <div class="brands-wrap">
-    <div class="sec-title">
-      <span class="tl"></span>
-      <h2>— AUTHORIZED BRANDS —</h2>
-      <span class="tl"></span>
-    </div>
-    <div class="brands-grid">
-      <div class="brand-card"><img src="DOLLAR.PNG" alt="Dollar"></div>
-      <div class="brand-card"><img src="ESSA.PNG"   alt="Essa"></div>
-      <div class="brand-card"><img src="PRITHVI.PNG" alt="Prithvi"></div>
-      <div class="brand-card"><img src="POOMER.PNG"  alt="Poomer"></div>
-      <div class="brand-card"><img src="DAZZLE.PNG"  alt="Dazzle"></div>
-      <div class="brand-card"><img src="BARUN.PNG"   alt="Barun"></div>
-    </div>
+  <div class="badge-row">
+    <span class="badge-line"></span>
+    <span class="badge">WHOLESALE DISTRIBUTOR</span>
+    <span class="badge-line right"></span>
   </div>
 
-  <!-- ══════════ CONTACT ══════════ -->
-  <div class="contact-wrap">
-    <div class="sec-title">
-      <span class="tl"></span>
-      <h2>— CONTACT US —</h2>
-      <span class="tl"></span>
-    </div>
-    <div class="contact-grid">
+  <p class="hero-sub">
+    Premium Innerwear, Kids T-Shirts, Socks &amp; Sportswear<br>
+    Across Tumkur, Karnataka
+  </p>
 
-      <div class="contact-card">
-        <div class="c-name">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#374151"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          Mahaveer Pareek
-        </div>
-        <div class="c-phone">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
-          +91 94482 74079
-        </div>
-        <div class="c-btns">
-          <a href="tel:+919448274079" class="c-btn c-btn-call">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
-            Call
-          </a>
-          <a href="https://wa.me/919448274079" class="c-btn c-btn-wa">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="c-name">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#374151"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
-          Office
-        </div>
-        <div class="c-phone">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
-          +91 94499 26891
-        </div>
-        <div class="c-btns">
-          <a href="tel:+919449926891" class="c-btn c-btn-call">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
-            Call
-          </a>
-          <a href="https://wa.me/919449926891" class="c-btn c-btn-wa">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══════════ LOCATION ══════════ -->
-  <div class="loc-wrap">
-    <a class="loc-card" href="https://maps.app.goo.gl/W66i3LW4LKf77Ghf8" target="_blank">
-      <div class="loc-pin">📍</div>
-      <div class="loc-text">
-        <div class="loc-name">Opp Sapthagiri PU College</div>
-        <div class="loc-addr">4th Cross, Sapthagiri Extension<br>Tumkur – 572102, Karnataka</div>
-      </div>
-      <div class="map-box">
-        <img src="MAP_PREVIEW.png" alt="Map">
-        <div class="map-open">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Open in Maps
-        </div>
-      </div>
+  <div class="cta-row">
+    <a href="tel:+919448274079" class="btn btn-call">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/>
+      </svg>
+      Call Now
+    </a>
+    <a href="https://wa.me/919448274079" class="btn btn-wa">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+      </svg>
+      WhatsApp
     </a>
   </div>
-
-  <!-- ══════════ WHY US ══════════ -->
-  <div class="why-wrap">
-    <div class="sec-title">
-      <span class="tl"></span>
-      <h2>— WHY CHOOSE US? —</h2>
-      <span class="tl"></span>
-    </div>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-icon">🏅</div>
-        <div class="why-lbl">100% Original<br>Products</div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🚚</div>
-        <div class="why-lbl">Reliable &amp;<br>Timely Supply</div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🤝</div>
-        <div class="why-lbl">Trusted by<br>Retailers</div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">🔄</div>
-        <div class="why-lbl">Strong Dealer<br>Support</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════ GSTIN FOOTER ══════════ -->
-  <div class="gstin-footer">
-    <div class="gstin-box">
-      <div class="gstin-lbl">GSTIN</div>
-      <div class="gstin-val">29ACHFS8748N1Z1</div>
-    </div>
-  </div>
-
 </div>
+
+<!-- ══ STATS ══ -->
+<div class="stats-wrap">
+  <div class="stats-box">
+
+    <div class="stat-col">
+      <div class="stat-svg">
+        <!-- Shield checkmark icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+      </div>
+      <div class="stat-num">30+</div>
+      <div class="stat-lbl">Years<br>of Trust</div>
+    </div>
+
+    <div class="stat-col">
+      <div class="stat-svg">
+        <!-- Price tag icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
+        </svg>
+      </div>
+      <div class="stat-num">8+</div>
+      <div class="stat-lbl">Premium<br>Brands</div>
+    </div>
+
+    <div class="stat-col">
+      <div class="stat-svg">
+        <!-- People/group icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+          <path d="M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+      </div>
+      <div class="stat-num">500+</div>
+      <div class="stat-lbl">Retailers<br>Served</div>
+    </div>
+
+    <div class="stat-col">
+      <div class="stat-svg">
+        <!-- Calendar icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <div class="stat-num">1997</div>
+      <div class="stat-lbl">Serving Since<br>1997</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ BRANDS ══ -->
+<div class="brands-wrap">
+  <div class="sec-title">
+    <span class="sec-line"></span>
+    <h2>AUTHORIZED BRANDS</h2>
+    <span class="sec-line"></span>
+  </div>
+  <div class="brands-grid">
+    <div class="brand-card"><img src="DOLLAR.PNG"  alt="Dollar"></div>
+    <div class="brand-card"><img src="ESSA.PNG"    alt="Essa"></div>
+    <div class="brand-card"><img src="PRITHVI.PNG" alt="Prithvi"></div>
+    <div class="brand-card"><img src="POOMER.PNG"  alt="Poomer"></div>
+    <div class="brand-card"><img src="DAZZLE.PNG"  alt="Dazzle"></div>
+    <div class="brand-card"><img src="BARUN.PNG"   alt="Barun"></div>
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div class="contact-wrap">
+  <div class="sec-title">
+    <span class="sec-line"></span>
+    <h2>CONTACT US</h2>
+    <span class="sec-line"></span>
+  </div>
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <div class="c-name">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        Mahaveer Pareek
+      </div>
+      <div class="c-phone">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+        +91 94482 74079
+      </div>
+      <div class="c-btns">
+        <a href="tel:+919448274079" class="c-btn c-call">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+          Call
+        </a>
+        <a href="https://wa.me/919448274079" class="c-btn c-wa">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="c-name">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        Office
+      </div>
+      <div class="c-phone">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+        +91 94499 26891
+      </div>
+      <div class="c-btns">
+        <a href="tel:+919449926891" class="c-btn c-call">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+          Call
+        </a>
+        <a href="https://wa.me/919449926891" class="c-btn c-wa">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ LOCATION ══ -->
+<div class="loc-wrap">
+  <a class="loc-card" href="https://maps.app.goo.gl/W66i3LW4LKf77Ghf8" target="_blank">
+    <div class="loc-pin">📍</div>
+    <div class="loc-info">
+      <div class="loc-name">Opp Sapthagiri PU College</div>
+      <div class="loc-addr">4th Cross, Sapthagiri Extension<br>Tumkur – 572102, Karnataka</div>
+    </div>
+    <div class="map-thumb">
+      <img src="MAP_PREVIEW.png" alt="Map">
+      <div class="map-lbl">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Open in Maps
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- ══ WHY US ══ -->
+<div class="why-wrap">
+  <div class="sec-title">
+    <span class="sec-line"></span>
+    <h2>WHY CHOOSE US?</h2>
+    <span class="sec-line"></span>
+  </div>
+  <div class="why-box">
+
+    <div class="why-item">
+      <div class="why-icon">
+        <!-- Medal/ribbon icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+      </div>
+      <div class="why-lbl">100% Original<br>Products</div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon">
+        <!-- Truck icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"/>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      </div>
+      <div class="why-lbl">Reliable &amp;<br>Timely Supply</div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon">
+        <!-- Handshake icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+        </svg>
+      </div>
+      <div class="why-lbl">Trusted by<br>Retailers</div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon">
+        <!-- Support/refresh icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/>
+          <polyline points="1 20 1 14 7 14"/>
+          <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+        </svg>
+      </div>
+      <div class="why-lbl">Strong Dealer<br>Support</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ GSTIN ══ -->
+<div class="gstin-footer">
+  <div class="gstin-box">
+    <div class="gstin-lbl">GSTIN</div>
+    <div class="gstin-val">29ACHFS8748N1Z1</div>
+  </div>
+</div>
+
+</div><!-- /card -->
 </body>
 </html>
