@@ -3,501 +3,473 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Shree Om Agencies</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-
-html{
--webkit-text-size-adjust:100%;
-text-size-adjust:100%;
+html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+body {
+  margin:0;
+  padding:12px;
+  font-family:'Inter',sans-serif;
+  background:#f0f2f5;
+  min-height:100vh;
 }
 
-body{
-margin:0;
-padding:12px;
-font-family:'Inter',sans-serif;
-background:#f5f7fb;
+/* ── OUTER CARD ── */
+.card {
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  max-width:430px;
+  margin:0 auto;
+  box-shadow:0 10px 40px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.06);
 }
 
-.card{
-background:#fff;
-border-radius:28px;
-overflow:hidden;
-position:relative;
-box-shadow:
-0 10px 30px rgba(0,0,0,.06),
-0 20px 60px rgba(0,0,0,.08);
+/* Red corner triangles */
+.card::before {
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:88px; height:88px;
+  background:linear-gradient(135deg,#c8102e,#e5192f);
+  clip-path:polygon(0 0,100% 0,0 100%);
+  z-index:10;
+}
+.card::after {
+  content:"";
+  position:absolute;
+  bottom:0; right:0;
+  width:88px; height:88px;
+  background:linear-gradient(135deg,#c8102e,#e5192f);
+  clip-path:polygon(100% 0,100% 100%,0 100%);
+  z-index:10;
 }
 
-/* Decorative Corners */
-
-.card:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:90px;
-height:90px;
-background:linear-gradient(135deg,#dc2626,#ef4444);
-clip-path:polygon(0 0,100% 0,0 100%);
+/* ── HERO ── */
+.hero {
+  background:linear-gradient(160deg,#fff7f7 0%,#ffffff 50%,#fff1f2 100%);
+  padding:26px 20px 22px;
+  text-align:center;
 }
 
-.card:after{
-content:"";
-position:absolute;
-bottom:0;
-right:0;
-width:90px;
-height:90px;
-background:linear-gradient(135deg,#dc2626,#ef4444);
-clip-path:polygon(100% 0,100% 100%,0 100%);
+/* Om logo */
+.logo-ring {
+  width:88px; height:88px;
+  border-radius:50%;
+  border:2.5px solid #c8102e;
+  background:#fff;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 12px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(200,16,46,.15);
+}
+.logo-ring img { width:76px; height:76px; object-fit:contain; }
+
+/* Title */
+.title {
+  font-size:36px;
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-0.3px;
+  margin-bottom:10px;
+}
+.title .red  { color:#e5192f; }
+.title .dark { color:#111827; }
+
+/* Divider + badge row */
+.divider-badge {
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; margin-bottom:12px;
+}
+.div-line {
+  height:1.5px; width:52px;
+  background:#e5192f;
+  position:relative;
+}
+/* Small diamond on each line end */
+.div-line::before, .div-line::after {
+  content:"";
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:5px; height:5px;
+  background:#e5192f;
+  border-radius:50%;
+}
+.div-line::before { left:-2px; }
+.div-line::after  { right:-2px; }
+
+.badge {
+  background:#e5192f;
+  color:#fff;
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  padding:5px 16px;
+  border-radius:999px;
 }
 
-.hero{
-background:
-linear-gradient(
-135deg,
-#fff7f7 0%,
-#ffffff 50%,
-#fff1f2 100%
-);
-padding-top:24px;
+.hero-sub {
+  font-size:13px;
+  color:#4b5563;
+  line-height:1.7;
+  margin-bottom:18px;
 }
 
-.btn{
-transition:.2s;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+/* CTA buttons */
+.cta-row { display:flex; justify-content:center; gap:12px; }
+.btn-cta {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:11px 26px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:700;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.13);
+  transition:transform .15s;
+}
+.btn-cta:hover { transform:translateY(-2px); }
+.btn-call { background:#dc2626; }
+.btn-wa   { background:#22c55e; }
+
+/* ── STATS ── */
+.stats-wrap { padding:0 18px 18px; }
+.stats-box {
+  border:1.5px solid #f1f5f9;
+  border-radius:20px;
+  padding:16px 8px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  box-shadow:0 3px 14px rgba(0,0,0,.05);
+}
+.stat-col { text-align:center; }
+.stat-icon { font-size:22px; margin-bottom:3px; }
+.stat-num  { font-size:28px; font-weight:900; color:#dc2626; line-height:1; }
+.stat-lbl  { font-size:11px; color:#6b7280; margin-top:4px; line-height:1.4; }
+
+/* ── SECTION DIVIDER ── */
+.sec-title {
+  display:flex; align-items:center; justify-content:center;
+  gap:10px; margin-bottom:14px;
+}
+.sec-title .tl { height:1.5px; width:48px; background:#fca5a5; }
+.sec-title h2 {
+  font-size:14px; font-weight:900;
+  color:#111827; letter-spacing:.5px;
+  white-space:nowrap;
 }
 
-.btn:hover{
-transform:translateY(-2px);
+/* ── BRANDS ── */
+.brands-wrap { padding:0 18px 18px; }
+.brands-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.brand-card {
+  border:1.5px solid #f1f5f9;
+  border-radius:14px;
+  height:84px;
+  display:flex; align-items:center; justify-content:center;
+  padding:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  overflow:hidden;
+}
+.brand-card img { max-width:100%; max-height:100%; object-fit:contain; }
+
+/* ── CONTACT ── */
+.contact-wrap { padding:0 18px 16px; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.contact-card {
+  border:1.5px solid #f1f5f9;
+  border-radius:16px;
+  padding:13px 12px;
+  box-shadow:0 3px 12px rgba(0,0,0,.04);
+}
+.c-name {
+  font-size:14px; font-weight:800; color:#111827;
+  display:flex; align-items:center; gap:5px;
+  margin-bottom:4px;
+}
+.c-phone {
+  font-size:12px; color:#374151;
+  display:flex; align-items:center; gap:4px;
+  margin-bottom:10px; font-weight:500;
+}
+.c-btns { display:flex; gap:7px; }
+.c-btn {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:6px 11px;
+  border-radius:999px;
+  font-size:11.5px; font-weight:700;
+  color:#fff; text-decoration:none;
+  box-shadow:0 3px 8px rgba(0,0,0,.13);
+}
+.c-btn-call { background:#dc2626; }
+.c-btn-wa   { background:#22c55e; }
+
+/* ── LOCATION ── */
+.loc-wrap { padding:0 18px 16px; }
+.loc-card {
+  border:1.5px solid #e2e8f0;
+  border-radius:16px;
+  padding:12px;
+  display:flex; align-items:center; gap:10px;
+  text-decoration:none;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  background:#fff;
+  transition:transform .15s;
+}
+.loc-card:hover { transform:translateY(-1px); }
+.loc-pin {
+  width:48px; height:48px; flex-shrink:0;
+  border-radius:50%;
+  background:#fff1f2;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px;
+}
+.loc-text { flex:1; }
+.loc-name { font-size:12.5px; font-weight:700; color:#111827; }
+.loc-addr { font-size:11px; color:#6b7280; line-height:1.5; margin-top:2px; }
+.map-box {
+  width:86px; height:58px; flex-shrink:0;
+  border-radius:10px; overflow:hidden;
+  border:1px solid #e2e8f0;
+  position:relative;
+}
+.map-box img { width:100%; height:100%; object-fit:cover; }
+.map-open {
+  position:absolute; bottom:0; left:0; right:0;
+  background:rgba(255,255,255,.93);
+  font-size:9.5px; font-weight:600; color:#1a73e8;
+  text-align:center; padding:2px 0;
+  display:flex; align-items:center; justify-content:center; gap:2px;
 }
 
-.wholesale-badge{
-display:inline-block;
-margin-top:10px;
-background:#ef4444;
-color:#fff;
-padding:7px 18px;
-border-radius:999px;
-font-size:12px;
-font-weight:700;
-letter-spacing:1px;
+/* ── WHY US ── */
+.why-wrap { padding:0 18px 16px; }
+.why-grid {
+  border:1.5px solid #f1f5f9;
+  border-radius:16px;
+  padding:16px 10px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
 }
+.why-item { text-align:center; }
+.why-icon { font-size:22px; margin-bottom:5px; }
+.why-lbl  { font-size:10.5px; color:#334155; font-weight:600; line-height:1.4; }
 
-.section-title{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-margin-bottom:18px;
+/* ── GSTIN FOOTER ── */
+.gstin-footer {
+  background:linear-gradient(135deg,#c8102e,#e5192f);
+  padding:18px 20px;
 }
-
-.section-title:before,
-.section-title:after{
-content:"";
-width:55px;
-height:2px;
-background:#fecaca;
+.gstin-box {
+  background:#fff;
+  border-radius:12px;
+  padding:10px 14px;
+  text-align:center;
 }
-
-.section-title h2{
-margin:0;
-font-size:20px;
-font-weight:800;
-color:#0f172a;
-}
-
-.stat-box{
-background:#fff;
-border:1px solid #eef2f7;
-border-radius:22px;
-padding:18px 10px;
-box-shadow:0 4px 16px rgba(0,0,0,.04);
-}
-
-.stat-number{
-font-size:34px;
-font-weight:800;
-color:#dc2626;
-line-height:1;
-}
-
-.stat-label{
-font-size:13px;
-margin-top:6px;
-color:#475569;
-}
-
-.brand-card{
-background:#fff;
-border:1px solid #eef2f7;
-border-radius:18px;
-height:90px;
-padding:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 3px 12px rgba(0,0,0,.03);
-}
-
-.brand-card img{
-max-width:100%;
-max-height:100%;
-object-fit:contain;
-}
-
-.contact-card{
-background:#fff;
-border:1px solid #eef2f7;
-border-radius:18px;
-padding:14px;
-box-shadow:0 4px 14px rgba(0,0,0,.04);
-}
-
-.contact-btn{
-padding:8px 14px;
-border-radius:999px;
-font-size:12px;
-font-weight:600;
-color:white;
-}
-
-.why-card{
-background:white;
-border-radius:18px;
-padding:15px;
-border:1px solid #eef2f7;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-}
-
-.why-item{
-text-align:center;
-font-size:11px;
-color:#334155;
-}
-
-.gstin-footer{
-background:linear-gradient(135deg,#dc2626,#ef4444);
-padding:20px;
-margin-top:15px;
-}
-
-.gstin-box{
-background:white;
-border-radius:14px;
-padding:12px;
-text-align:center;
-}
-
-.gstin-label{
-font-size:12px;
-color:#64748b;
-}
-
-.gstin-value{
-font-weight:800;
-font-size:20px;
-color:#111827;
-}
-
+.gstin-lbl { font-size:11px; color:#6b7280; font-weight:500; letter-spacing:.5px; }
+.gstin-val { font-size:19px; font-weight:900; color:#111827; margin-top:1px; letter-spacing:.3px; }
 </style>
 </head>
 <body>
-
-<div class="max-w-[460px] mx-auto">
-
 <div class="card">
 
-<!-- HERO -->
-
-<section class="hero text-center px-5 pb-6">
-
-<img src="LOGO.PNG"
-class="h-24 mx-auto object-contain">
-
-<h1 class="mt-3 text-[42px] leading-none font-extrabold">
-<span class="text-red-600">Shree Om</span>
-<span class="text-slate-900">Agencies</span>
-</h1>
-
-<div class="wholesale-badge">
-WHOLESALE DISTRIBUTOR
-</div>
-
-<p class="mt-4 text-sm text-slate-600 leading-6">
-Premium Innerwear, Kids T-Shirts,
-Socks & Sportswear
-<br>
-Across Tumkur, Karnataka
-</p>
-
-<div class="flex justify-center gap-3 mt-5">
-
-<a href="tel:+919448274079"
-class="btn bg-red-600 text-white px-7 py-3 rounded-full font-semibold">
-📞 Call Now
-</a>
-
-<a href="https://wa.me/919448274079"
-class="btn bg-green-600 text-white px-7 py-3 rounded-full font-semibold">
-WhatsApp
-</a>
-
-</div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="px-5">
-
-<div class="stat-box">
-
-<div class="grid grid-cols-4 gap-2 text-center">
-
-<div>
-<div class="stat-number">30+</div>
-<div class="stat-label">Years<br>of Trust</div>
-</div>
-
-<div>
-<div class="stat-number">8+</div>
-<div class="stat-label">Premium<br>Brands</div>
-</div>
-
-<div>
-<div class="stat-number">500+</div>
-<div class="stat-label">Retailers<br>Served</div>
-</div>
-
-<div>
-<div class="stat-number">1997</div>
-<div class="stat-label">Serving<br>Since</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BRANDS -->
-
-<section class="px-5 py-6">
-
-<div class="section-title">
-<h2>AUTHORIZED BRANDS</h2>
-</div>
-
-<div class="grid grid-cols-3 gap-3">
-
-<div class="brand-card">
-<img src="DOLLAR.PNG">
-</div>
-
-<div class="brand-card">
-<img src="ESSA.PNG">
-</div>
-
-<div class="brand-card">
-<img src="PRITHVI.PNG">
-</div>
-
-<div class="brand-card">
-<img src="POOMER.PNG">
-</div>
-
-<div class="brand-card">
-<img src="DAZZLE.PNG">
-</div>
-
-<div class="brand-card">
-<img src="BARUN.PNG">
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="px-5">
-
-<div class="section-title">
-<h2>CONTACT US</h2>
-</div>
-
-<div class="grid grid-cols-2 gap-3">
-
-<div class="contact-card">
-
-<div class="font-bold text-lg">
-Mahaveer Pareek
-</div>
-
-<div class="text-sm mt-1">
-+91 94482 74079
-</div>
-
-<div class="flex gap-2 mt-3">
-
-<a href="tel:+919448274079"
-class="contact-btn bg-red-600">
-📞 Call
-</a>
-
-<a href="https://wa.me/919448274079"
-class="contact-btn bg-green-600">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-<div class="contact-card">
-
-<div class="font-bold text-lg">
-Office
-</div>
-
-<div class="text-sm mt-1">
-+91 94499 26891
-</div>
-
-<div class="flex gap-2 mt-3">
-
-<a href="tel:+919449926891"
-class="contact-btn bg-red-600">
-📞 Call
-</a>
-
-<a href="https://wa.me/919449926891"
-class="contact-btn bg-green-600">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- LOCATION -->
-
-<section class="px-5 py-5">
-
-<a href="https://maps.app.goo.gl/W66i3LW4LKf77Ghf8"
-target="_blank">
-
-<div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
-
-<div class="flex items-center gap-3">
-
-<div class="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center text-red-600 text-2xl">
-📍
-</div>
-
-<div class="flex-1">
-
-<div class="font-semibold text-sm">
-Opp Sapthagiri PU College
-</div>
-
-<div class="text-xs text-slate-600 mt-1">
-4th Cross, Sapthagiri Extension
-</div>
-
-<div class="text-xs text-slate-600">
-Tumkur – 572102, Karnataka
-</div>
+  <!-- ══════════ HERO ══════════ -->
+  <div class="hero">
+    <div class="logo-ring">
+      <img src="LOGO.PNG" alt="Shree Om Logo">
+    </div>
+
+    <div class="title">
+      <span class="red">Shree Om</span> <span class="dark">Agencies</span>
+    </div>
+
+    <div class="divider-badge">
+      <span class="div-line"></span>
+      <span class="badge">WHOLESALE DISTRIBUTOR</span>
+      <span class="div-line"></span>
+    </div>
+
+    <p class="hero-sub">
+      Premium Innerwear, Kids T-Shirts, Socks &amp; Sportswear<br>
+      Across Tumkur, Karnataka
+    </p>
+
+    <div class="cta-row">
+      <a href="tel:+919448274079" class="btn-cta btn-call">
+        <!-- phone icon -->
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/>
+        </svg>
+        Call Now
+      </a>
+      <a href="https://wa.me/919448274079" class="btn-cta btn-wa">
+        <!-- whatsapp icon -->
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════ STATS ══════════ -->
+  <div class="stats-wrap">
+    <div class="stats-box">
+      <div class="stat-col">
+        <div class="stat-icon">🛡️</div>
+        <div class="stat-num">30+</div>
+        <div class="stat-lbl">Years<br>of Trust</div>
+      </div>
+      <div class="stat-col">
+        <div class="stat-icon">🏷️</div>
+        <div class="stat-num">8+</div>
+        <div class="stat-lbl">Premium<br>Brands</div>
+      </div>
+      <div class="stat-col">
+        <div class="stat-icon">👥</div>
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">Retailers<br>Served</div>
+      </div>
+      <div class="stat-col">
+        <div class="stat-icon">📅</div>
+        <div class="stat-num">1997</div>
+        <div class="stat-lbl">Serving<br>Since 1997</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ BRANDS ══════════ -->
+  <div class="brands-wrap">
+    <div class="sec-title">
+      <span class="tl"></span>
+      <h2>— AUTHORIZED BRANDS —</h2>
+      <span class="tl"></span>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-card"><img src="DOLLAR.PNG" alt="Dollar"></div>
+      <div class="brand-card"><img src="ESSA.PNG"   alt="Essa"></div>
+      <div class="brand-card"><img src="PRITHVI.PNG" alt="Prithvi"></div>
+      <div class="brand-card"><img src="POOMER.PNG"  alt="Poomer"></div>
+      <div class="brand-card"><img src="DAZZLE.PNG"  alt="Dazzle"></div>
+      <div class="brand-card"><img src="BARUN.PNG"   alt="Barun"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <div class="contact-wrap">
+    <div class="sec-title">
+      <span class="tl"></span>
+      <h2>— CONTACT US —</h2>
+      <span class="tl"></span>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="c-name">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#374151"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          Mahaveer Pareek
+        </div>
+        <div class="c-phone">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+          +91 94482 74079
+        </div>
+        <div class="c-btns">
+          <a href="tel:+919448274079" class="c-btn c-btn-call">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+            Call
+          </a>
+          <a href="https://wa.me/919448274079" class="c-btn c-btn-wa">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="c-name">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#374151"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+          Office
+        </div>
+        <div class="c-phone">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+          +91 94499 26891
+        </div>
+        <div class="c-btns">
+          <a href="tel:+919449926891" class="c-btn c-btn-call">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 17z"/></svg>
+            Call
+          </a>
+          <a href="https://wa.me/919449926891" class="c-btn c-btn-wa">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.428a.5.5 0 00.6.6l5.638-1.47A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-4.97-1.351l-.357-.212-3.697.964.987-3.607-.233-.371A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════ LOCATION ══════════ -->
+  <div class="loc-wrap">
+    <a class="loc-card" href="https://maps.app.goo.gl/W66i3LW4LKf77Ghf8" target="_blank">
+      <div class="loc-pin">📍</div>
+      <div class="loc-text">
+        <div class="loc-name">Opp Sapthagiri PU College</div>
+        <div class="loc-addr">4th Cross, Sapthagiri Extension<br>Tumkur – 572102, Karnataka</div>
+      </div>
+      <div class="map-box">
+        <img src="MAP_PREVIEW.png" alt="Map">
+        <div class="map-open">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Open in Maps
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ══════════ WHY US ══════════ -->
+  <div class="why-wrap">
+    <div class="sec-title">
+      <span class="tl"></span>
+      <h2>— WHY CHOOSE US? —</h2>
+      <span class="tl"></span>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">🏅</div>
+        <div class="why-lbl">100% Original<br>Products</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🚚</div>
+        <div class="why-lbl">Reliable &amp;<br>Timely Supply</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🤝</div>
+        <div class="why-lbl">Trusted by<br>Retailers</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔄</div>
+        <div class="why-lbl">Strong Dealer<br>Support</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ GSTIN FOOTER ══════════ -->
+  <div class="gstin-footer">
+    <div class="gstin-box">
+      <div class="gstin-lbl">GSTIN</div>
+      <div class="gstin-val">29ACHFS8748N1Z1</div>
+    </div>
+  </div>
 
 </div>
-
-<div class="w-28 h-16 rounded-xl overflow-hidden border relative">
-
-<img src="MAP_PREVIEW.png"
-class="w-full h-full object-cover">
-
-<div class="absolute bottom-1 left-1 right-1 bg-white/95 text-[10px] py-1 rounded text-center font-medium">
-Open Maps
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</a>
-
-</section>
-
-<!-- WHY US -->
-
-<section class="px-5 pb-5">
-
-<div class="section-title">
-<h2>WHY CHOOSE US?</h2>
-</div>
-
-<div class="why-card">
-
-<div class="why-item">
-🏅<br>
-100% Original
-</div>
-
-<div class="why-item">
-🚚<br>
-Reliable Supply
-</div>
-
-<div class="why-item">
-🤝<br>
-Trusted Dealers
-</div>
-
-<div class="why-item">
-🔄<br>
-Strong Support
-</div>
-
-</div>
-
-</section>
-
-<!-- GST -->
-
-<section class="gstin-footer">
-
-<div class="gstin-box">
-
-<div class="gstin-label">
-GSTIN
-</div>
-
-<div class="gstin-value">
-29ACHFS8748N1Z1
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-</div>
-
 </body>
 </html>
